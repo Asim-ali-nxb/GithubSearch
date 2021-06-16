@@ -3,27 +3,86 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130485602678E45F00991ECF /* RepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304855F2678E45F00991ECF /* RepositoryListTableViewCell.swift */; };
+		130485662678EDB000991ECF /* RepositoryWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130485652678EDB000991ECF /* RepositoryWebViewController.swift */; };
+		1304856A2678F7E700991ECF /* RepositoryWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130485692678F7E700991ECF /* RepositoryWebViewModel.swift */; };
+		130485772679040E00991ECF /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130485762679040E00991ECF /* UIViewController+Ext.swift */; };
 		13D67F7B2678959E0074C800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67F7A2678959E0074C800 /* AppDelegate.swift */; };
 		13D67F7D2678959E0074C800 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67F7C2678959E0074C800 /* SceneDelegate.swift */; };
-		13D67F7F2678959E0074C800 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67F7E2678959E0074C800 /* ViewController.swift */; };
-		13D67F822678959E0074C800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D67F802678959E0074C800 /* Main.storyboard */; };
+		13D67F7F2678959E0074C800 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67F7E2678959E0074C800 /* RepositoryListViewController.swift */; };
 		13D67F842678959F0074C800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D67F832678959F0074C800 /* Assets.xcassets */; };
 		13D67F872678959F0074C800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D67F852678959F0074C800 /* LaunchScreen.storyboard */; };
+		13D67FAB2678A2A70074C800 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FA12678A2A70074C800 /* RepositoryModel.swift */; };
+		13D67FAC2678A2A70074C800 /* GithubSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FA22678A2A70074C800 /* GithubSearchRepository.swift */; };
+		13D67FAE2678A2A70074C800 /* CancellableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FA52678A2A70074C800 /* CancellableTask.swift */; };
+		13D67FAF2678A2A70074C800 /* CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FA62678A2A70074C800 /* CancellableOperation.swift */; };
+		13D67FB02678A2A70074C800 /* CancellableDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FA72678A2A70074C800 /* CancellableDataTask.swift */; };
+		13D67FC72678A5420074C800 /* NetworkReachabilityNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FB92678A5420074C800 /* NetworkReachabilityNotifier.swift */; };
+		13D67FCA2678A5420074C800 /* GithubSearchNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FBE2678A5420074C800 /* GithubSearchNetworkService.swift */; };
+		13D67FCB2678A5420074C800 /* NetworkNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FC02678A5420074C800 /* NetworkNotifier.swift */; };
+		13D67FCC2678A5420074C800 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FC12678A5420074C800 /* Service.swift */; };
+		13D67FCD2678A5420074C800 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FC22678A5420074C800 /* Error.swift */; };
+		13D67FCE2678A5420074C800 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FC32678A5420074C800 /* Router.swift */; };
+		13D67FCF2678A5420074C800 /* URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FC42678A5420074C800 /* URLRequestConvertible.swift */; };
+		13D67FD02678A5420074C800 /* GithubSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FC62678A5420074C800 /* GithubSearchRouter.swift */; };
+		13D67FD42678A5890074C800 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FD32678A5890074C800 /* Parser.swift */; };
+		13D67FD72678B1040074C800 /* RepositoriesResponseNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FD62678B1040074C800 /* RepositoriesResponseNetworkModel.swift */; };
+		13D67FE72678B23B0074C800 /* GithubSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FDC2678B23B0074C800 /* GithubSearchApp.swift */; };
+		13D67FE82678B23B0074C800 /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FDD2678B23B0074C800 /* iOSViewControllerFactory.swift */; };
+		13D67FE92678B23B0074C800 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FDE2678B23B0074C800 /* ViewControllerFactory.swift */; };
+		13D67FEA2678B23B0074C800 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FE02678B23B0074C800 /* Flow.swift */; };
+		13D67FEC2678B23B0074C800 /* FlowRepositoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FE22678B23B0074C800 /* FlowRepositoryList.swift */; };
+		13D67FED2678B23B0074C800 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FE42678B23B0074C800 /* NavigationControllerRouter.swift */; };
+		13D67FEE2678B23B0074C800 /* RepositoryListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FE52678B23B0074C800 /* RepositoryListDelegate.swift */; };
+		13D67FFC2678BB260074C800 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FFB2678BB260074C800 /* RepositoryListViewModel.swift */; };
+		13D67FFF2678BB380074C800 /* RepositoryListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FFE2678BB380074C800 /* RepositoryListSearch.swift */; };
+		13D680142678BEB10074C800 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 13D680132678BEB10074C800 /* Reachability */; };
+		13D6801C2678CE250074C800 /* RepositoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6801A2678CE250074C800 /* RepositoryListPresenter.swift */; };
+		13D680232678CF1B0074C800 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D680222678CF1B0074C800 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1304855F2678E45F00991ECF /* RepositoryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListTableViewCell.swift; sourceTree = "<group>"; };
+		130485652678EDB000991ECF /* RepositoryWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWebViewController.swift; sourceTree = "<group>"; };
+		130485692678F7E700991ECF /* RepositoryWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWebViewModel.swift; sourceTree = "<group>"; };
+		130485762679040E00991ECF /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		13D67F772678959E0074C800 /* GithubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D67F7A2678959E0074C800 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D67F7C2678959E0074C800 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13D67F7E2678959E0074C800 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		13D67F812678959E0074C800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		13D67F7E2678959E0074C800 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
 		13D67F832678959F0074C800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D67F862678959F0074C800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D67F882678959F0074C800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13D67FA12678A2A70074C800 /* RepositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		13D67FA22678A2A70074C800 /* GithubSearchRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRepository.swift; sourceTree = "<group>"; };
+		13D67FA52678A2A70074C800 /* CancellableTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellableTask.swift; sourceTree = "<group>"; };
+		13D67FA62678A2A70074C800 /* CancellableOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellableOperation.swift; sourceTree = "<group>"; };
+		13D67FA72678A2A70074C800 /* CancellableDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellableDataTask.swift; sourceTree = "<group>"; };
+		13D67FB92678A5420074C800 /* NetworkReachabilityNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityNotifier.swift; sourceTree = "<group>"; };
+		13D67FBE2678A5420074C800 /* GithubSearchNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchNetworkService.swift; sourceTree = "<group>"; };
+		13D67FC02678A5420074C800 /* NetworkNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkNotifier.swift; sourceTree = "<group>"; };
+		13D67FC12678A5420074C800 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		13D67FC22678A5420074C800 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		13D67FC32678A5420074C800 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		13D67FC42678A5420074C800 /* URLRequestConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestConvertible.swift; sourceTree = "<group>"; };
+		13D67FC62678A5420074C800 /* GithubSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRouter.swift; sourceTree = "<group>"; };
+		13D67FD32678A5890074C800 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		13D67FD62678B1040074C800 /* RepositoriesResponseNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesResponseNetworkModel.swift; sourceTree = "<group>"; };
+		13D67FDC2678B23B0074C800 /* GithubSearchApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchApp.swift; sourceTree = "<group>"; };
+		13D67FDD2678B23B0074C800 /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
+		13D67FDE2678B23B0074C800 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		13D67FE02678B23B0074C800 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		13D67FE22678B23B0074C800 /* FlowRepositoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowRepositoryList.swift; sourceTree = "<group>"; };
+		13D67FE42678B23B0074C800 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
+		13D67FE52678B23B0074C800 /* RepositoryListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListDelegate.swift; sourceTree = "<group>"; };
+		13D67FFB2678BB260074C800 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
+		13D67FFE2678BB380074C800 /* RepositoryListSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListSearch.swift; sourceTree = "<group>"; };
+		13D6801A2678CE250074C800 /* RepositoryListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListPresenter.swift; sourceTree = "<group>"; };
+		13D680222678CF1B0074C800 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +90,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D680142678BEB10074C800 /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1304853F2678D24900991ECF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				130485762679040E00991ECF /* UIViewController+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		130485642678ED9300991ECF /* RepositoryWebView */ = {
+			isa = PBXGroup;
+			children = (
+				130485652678EDB000991ECF /* RepositoryWebViewController.swift */,
+			);
+			path = RepositoryWebView;
+			sourceTree = "<group>";
+		};
+		130485682678F7CD00991ECF /* Repository WebView */ = {
+			isa = PBXGroup;
+			children = (
+				130485692678F7E700991ECF /* RepositoryWebViewModel.swift */,
+			);
+			path = "Repository WebView";
+			sourceTree = "<group>";
+		};
+		139CAC402679EB0700405428 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FD62678B1040074C800 /* RepositoriesResponseNetworkModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		13D67F6E2678959E0074C800 = {
 			isa = PBXGroup;
 			children = (
 				13D67F792678959E0074C800 /* GithubSearch */,
 				13D67F782678959E0074C800 /* Products */,
+				13D680122678BEB10074C800 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +149,203 @@
 		13D67F792678959E0074C800 /* GithubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				13D67F7A2678959E0074C800 /* AppDelegate.swift */,
-				13D67F7C2678959E0074C800 /* SceneDelegate.swift */,
-				13D67F7E2678959E0074C800 /* ViewController.swift */,
-				13D67F802678959E0074C800 /* Main.storyboard */,
+				13D67F90267896CE0074C800 /* Application */,
+				13D680212678CF120074C800 /* View */,
+				13D67FF92678BA160074C800 /* View Model */,
+				13D67FDB2678B23B0074C800 /* Routing  */,
+				13D680192678CE250074C800 /* Presenter */,
+				13D67FD22678A5890074C800 /* Parser */,
+				13D67F9C2678A2A70074C800 /* DataModel */,
+				13D67FB72678A5420074C800 /* Network */,
+				1304853F2678D24900991ECF /* Extension */,
+				13D67F8F267895FC0074C800 /* Resources */,
+			);
+			path = GithubSearch;
+			sourceTree = "<group>";
+		};
+		13D67F8F267895FC0074C800 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				13D67F832678959F0074C800 /* Assets.xcassets */,
 				13D67F852678959F0074C800 /* LaunchScreen.storyboard */,
 				13D67F882678959F0074C800 /* Info.plist */,
 			);
-			path = GithubSearch;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		13D67F90267896CE0074C800 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				13D67F7A2678959E0074C800 /* AppDelegate.swift */,
+				13D67F7C2678959E0074C800 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		13D67F9C2678A2A70074C800 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FA42678A2A70074C800 /* Cancellable */,
+				13D67F9E2678A2A70074C800 /* Models */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		13D67F9E2678A2A70074C800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FA12678A2A70074C800 /* RepositoryModel.swift */,
+				13D67FA22678A2A70074C800 /* GithubSearchRepository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13D67FA42678A2A70074C800 /* Cancellable */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FA52678A2A70074C800 /* CancellableTask.swift */,
+				13D67FA62678A2A70074C800 /* CancellableOperation.swift */,
+				13D67FA72678A2A70074C800 /* CancellableDataTask.swift */,
+			);
+			path = Cancellable;
+			sourceTree = "<group>";
+		};
+		13D67FB72678A5420074C800 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FB82678A5420074C800 /* Network Notifier */,
+				13D67FBC2678A5420074C800 /* Service */,
+				139CAC402679EB0700405428 /* Model */,
+				13D67FBF2678A5420074C800 /* Base */,
+				13D67FC52678A5420074C800 /* Router */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		13D67FB82678A5420074C800 /* Network Notifier */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FB92678A5420074C800 /* NetworkReachabilityNotifier.swift */,
+			);
+			path = "Network Notifier";
+			sourceTree = "<group>";
+		};
+		13D67FBC2678A5420074C800 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FBE2678A5420074C800 /* GithubSearchNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		13D67FBF2678A5420074C800 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FC02678A5420074C800 /* NetworkNotifier.swift */,
+				13D67FC12678A5420074C800 /* Service.swift */,
+				13D67FC22678A5420074C800 /* Error.swift */,
+				13D67FC32678A5420074C800 /* Router.swift */,
+				13D67FC42678A5420074C800 /* URLRequestConvertible.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		13D67FC52678A5420074C800 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FC62678A5420074C800 /* GithubSearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		13D67FD22678A5890074C800 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FD32678A5890074C800 /* Parser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		13D67FDB2678B23B0074C800 /* Routing  */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FDC2678B23B0074C800 /* GithubSearchApp.swift */,
+				13D67FDE2678B23B0074C800 /* ViewControllerFactory.swift */,
+				13D67FDD2678B23B0074C800 /* iOSViewControllerFactory.swift */,
+				13D67FDF2678B23B0074C800 /* Flow */,
+				13D67FE32678B23B0074C800 /* Router */,
+			);
+			path = "Routing ";
+			sourceTree = "<group>";
+		};
+		13D67FDF2678B23B0074C800 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FE02678B23B0074C800 /* Flow.swift */,
+				13D67FE22678B23B0074C800 /* FlowRepositoryList.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		13D67FE32678B23B0074C800 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FE42678B23B0074C800 /* NavigationControllerRouter.swift */,
+				13D67FE52678B23B0074C800 /* RepositoryListDelegate.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		13D67FF92678BA160074C800 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FFA2678BA6F0074C800 /* Repository List */,
+				130485682678F7CD00991ECF /* Repository WebView */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		13D67FFA2678BA6F0074C800 /* Repository List */ = {
+			isa = PBXGroup;
+			children = (
+				13D67FFB2678BB260074C800 /* RepositoryListViewModel.swift */,
+				13D67FFE2678BB380074C800 /* RepositoryListSearch.swift */,
+			);
+			path = "Repository List";
+			sourceTree = "<group>";
+		};
+		13D680122678BEB10074C800 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13D680192678CE250074C800 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				13D6801A2678CE250074C800 /* RepositoryListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		13D680212678CF120074C800 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13D680222678CF1B0074C800 /* View.swift */,
+				13D680252678CF220074C800 /* RepositoryList */,
+				130485642678ED9300991ECF /* RepositoryWebView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13D680252678CF220074C800 /* RepositoryList */ = {
+			isa = PBXGroup;
+			children = (
+				13D67F7E2678959E0074C800 /* RepositoryListViewController.swift */,
+				1304855F2678E45F00991ECF /* RepositoryListTableViewCell.swift */,
+			);
+			path = RepositoryList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +364,9 @@
 			dependencies = (
 			);
 			name = GithubSearch;
+			packageProductDependencies = (
+				13D680132678BEB10074C800 /* Reachability */,
+			);
 			productName = GithubSearch;
 			productReference = 13D67F772678959E0074C800 /* GithubSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +394,9 @@
 				Base,
 			);
 			mainGroup = 13D67F6E2678959E0074C800;
+			packageReferences = (
+				13D67FB32678A5390074C800 /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
 			productRefGroup = 13D67F782678959E0074C800 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +413,6 @@
 			files = (
 				13D67F872678959F0074C800 /* LaunchScreen.storyboard in Resources */,
 				13D67F842678959F0074C800 /* Assets.xcassets in Resources */,
-				13D67F822678959E0074C800 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +423,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D67F7F2678959E0074C800 /* ViewController.swift in Sources */,
+				13D67FFC2678BB260074C800 /* RepositoryListViewModel.swift in Sources */,
+				13D67FE82678B23B0074C800 /* iOSViewControllerFactory.swift in Sources */,
+				130485772679040E00991ECF /* UIViewController+Ext.swift in Sources */,
+				13D67F7F2678959E0074C800 /* RepositoryListViewController.swift in Sources */,
+				13D67FAF2678A2A70074C800 /* CancellableOperation.swift in Sources */,
+				13D67FE92678B23B0074C800 /* ViewControllerFactory.swift in Sources */,
+				13D67FFF2678BB380074C800 /* RepositoryListSearch.swift in Sources */,
+				13D67FEA2678B23B0074C800 /* Flow.swift in Sources */,
+				13D67FB02678A2A70074C800 /* CancellableDataTask.swift in Sources */,
+				13D67FCE2678A5420074C800 /* Router.swift in Sources */,
+				13D67FCF2678A5420074C800 /* URLRequestConvertible.swift in Sources */,
+				13D6801C2678CE250074C800 /* RepositoryListPresenter.swift in Sources */,
+				13D67FD72678B1040074C800 /* RepositoriesResponseNetworkModel.swift in Sources */,
+				13D67FED2678B23B0074C800 /* NavigationControllerRouter.swift in Sources */,
+				13D67FEE2678B23B0074C800 /* RepositoryListDelegate.swift in Sources */,
+				13D67FAC2678A2A70074C800 /* GithubSearchRepository.swift in Sources */,
+				13D67FEC2678B23B0074C800 /* FlowRepositoryList.swift in Sources */,
+				13D680232678CF1B0074C800 /* View.swift in Sources */,
+				13D67FAB2678A2A70074C800 /* RepositoryModel.swift in Sources */,
+				130485602678E45F00991ECF /* RepositoryListTableViewCell.swift in Sources */,
+				13D67FD42678A5890074C800 /* Parser.swift in Sources */,
+				13D67FCB2678A5420074C800 /* NetworkNotifier.swift in Sources */,
+				13D67FCC2678A5420074C800 /* Service.swift in Sources */,
+				13D67FCA2678A5420074C800 /* GithubSearchNetworkService.swift in Sources */,
+				13D67FAE2678A2A70074C800 /* CancellableTask.swift in Sources */,
+				13D67FC72678A5420074C800 /* NetworkReachabilityNotifier.swift in Sources */,
 				13D67F7B2678959E0074C800 /* AppDelegate.swift in Sources */,
+				130485662678EDB000991ECF /* RepositoryWebViewController.swift in Sources */,
+				13D67FD02678A5420074C800 /* GithubSearchRouter.swift in Sources */,
+				13D67FE72678B23B0074C800 /* GithubSearchApp.swift in Sources */,
+				13D67FCD2678A5420074C800 /* Error.swift in Sources */,
+				1304856A2678F7E700991ECF /* RepositoryWebViewModel.swift in Sources */,
 				13D67F7D2678959E0074C800 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +462,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		13D67F802678959E0074C800 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13D67F812678959E0074C800 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		13D67F852678959F0074C800 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +596,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MKA8L8H67;
-				INFOPLIST_FILE = GithubSearch/Info.plist;
+				INFOPLIST_FILE = GithubSearch/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +604,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nxb.GithubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +615,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MKA8L8H67;
-				INFOPLIST_FILE = GithubSearch/Info.plist;
+				INFOPLIST_FILE = GithubSearch/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +623,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nxb.GithubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -341,6 +649,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		13D67FB32678A5390074C800 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		13D680132678BEB10074C800 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13D67FB32678A5390074C800 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13D67F6F2678959E0074C800 /* Project object */;
 }
