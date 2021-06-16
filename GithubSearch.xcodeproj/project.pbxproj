@@ -39,7 +39,6 @@
 		13D67FED2678B23B0074C800 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FE42678B23B0074C800 /* NavigationControllerRouter.swift */; };
 		13D67FEE2678B23B0074C800 /* RepositoryListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FE52678B23B0074C800 /* RepositoryListDelegate.swift */; };
 		13D67FFC2678BB260074C800 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FFB2678BB260074C800 /* RepositoryListViewModel.swift */; };
-		13D67FFF2678BB380074C800 /* RepositoryListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D67FFE2678BB380074C800 /* RepositoryListSearch.swift */; };
 		13D680142678BEB10074C800 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 13D680132678BEB10074C800 /* Reachability */; };
 		13D6801C2678CE250074C800 /* RepositoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6801A2678CE250074C800 /* RepositoryListPresenter.swift */; };
 		13D680232678CF1B0074C800 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D680222678CF1B0074C800 /* View.swift */; };
@@ -80,7 +79,6 @@
 		13D67FE42678B23B0074C800 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		13D67FE52678B23B0074C800 /* RepositoryListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListDelegate.swift; sourceTree = "<group>"; };
 		13D67FFB2678BB260074C800 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
-		13D67FFE2678BB380074C800 /* RepositoryListSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListSearch.swift; sourceTree = "<group>"; };
 		13D6801A2678CE250074C800 /* RepositoryListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListPresenter.swift; sourceTree = "<group>"; };
 		13D680222678CF1B0074C800 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				13D67FFB2678BB260074C800 /* RepositoryListViewModel.swift */,
-				13D67FFE2678BB380074C800 /* RepositoryListSearch.swift */,
 			);
 			path = "Repository List";
 			sourceTree = "<group>";
@@ -429,7 +426,6 @@
 				13D67F7F2678959E0074C800 /* RepositoryListViewController.swift in Sources */,
 				13D67FAF2678A2A70074C800 /* CancellableOperation.swift in Sources */,
 				13D67FE92678B23B0074C800 /* ViewControllerFactory.swift in Sources */,
-				13D67FFF2678BB380074C800 /* RepositoryListSearch.swift in Sources */,
 				13D67FEA2678B23B0074C800 /* Flow.swift in Sources */,
 				13D67FB02678A2A70074C800 /* CancellableDataTask.swift in Sources */,
 				13D67FCE2678A5420074C800 /* Router.swift in Sources */,

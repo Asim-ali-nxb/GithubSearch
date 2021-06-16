@@ -13,7 +13,8 @@ protocol RepositoryListViewModel {
     var view: View? {get set}
     var searchText: CurrentValueSubject <String, Never>{get set}
     var searchPlaceholder: String {get}
-    func loadMore()
+    func searchMore()
+    func abort()
 }
 
 final class RepositoryListConcreteViewModel: RepositoryListViewModel {
@@ -21,24 +22,21 @@ final class RepositoryListConcreteViewModel: RepositoryListViewModel {
     let dataItems: CurrentValueSubject<[RepositoryListPresenter], Never>
     private let dataSource: GithubSearchRepository
     private var networkNotifier: NetworkNotifier
+    private var query: String?
+    private let pageSize = 30
+    var totalCount = 0
     
-    weak var view: View? {
-        didSet {
-            searchViewModel.view = view
-        }
-    }
+    weak var view: View?
+    
     var searchText = CurrentValueSubject<String, Never>("")
     var cancellable: Cancellable?
-    private var searchViewModel: RepositoryListSearch
     var subscription: Set<AnyCancellable> = []
     
     // MARK: - Init
     init(dataItems: CurrentValueSubject<[RepositoryListPresenter], Never>,
          dataSource: GithubSearchRepository,
-         searchViewModel: RepositoryListSearch,
          networkNotifier: NetworkNotifier) {
         self.dataSource = dataSource
-        self.searchViewModel = searchViewModel
         self.dataItems = dataItems
         self.networkNotifier = networkNotifier
         searchText
@@ -47,7 +45,7 @@ final class RepositoryListConcreteViewModel: RepositoryListViewModel {
             .dropFirst(1)
             .map({[unowned self] (string) -> String? in
                 if string.count < 1 {
-                    self.searchViewModel.abort()
+                    self.abort()
                     self.view?.loadingActivity(loading: false)
                     return nil
                 }
@@ -61,18 +59,64 @@ final class RepositoryListConcreteViewModel: RepositoryListViewModel {
                 self.cancellable?.cancelRequest()
                 self.cancellable = nil
                 self.view?.loadingActivity(loading: true)
-                self.searchViewModel.search(query: searchField)
+                self.search(query: searchField)
             }.store(in: &subscription)
         
         self.networkNotifier.whenReachable = onNetworkReachale
+    }
+    
+    func abort() {
+        cancellable?.cancelRequest()
+        cancellable = nil
+        dataItems.send([])
+        totalCount = 0
+        query = nil
     }
     
     private init() {
         fatalError("Can't be initialized without required parameters")
     }
     
-    func loadMore() {
-        searchViewModel.searchMore()
+    func search(query: String) {
+        dataItems.value = []
+        search(query: query, page: 1)
+    }
+    
+    func searchMore() {
+        if let query = query {
+            let currentCount = (dataItems.value.count / pageSize) + 1
+            if(dataItems.value.count < totalCount) {
+                self.view?.loadingActivity(loading: true)
+                search(query: query, page: currentCount)
+            }
+        }
+    }
+    
+    func search(query: String, page: Int = 0) {
+        self.query = query
+        cancellable?.cancelRequest()
+        cancellable = dataSource.searchRepos(query: query, page: page, pageSize: pageSize, response: {[weak self] response in
+            switch response {
+            case .success(let successResponse):
+                self?.view?.loadingActivity(loading: false)
+                self?.totalCount = successResponse.totalCount
+                
+                var repos: [RepositoryListPresenter] = self?.dataItems.value ?? []
+                
+                let newRepos = successResponse.items.map {repo in
+                    RepositoryListPresenter(name: repo.name, fullName: repo.fullName, repositoryURL: repo.url)
+                }
+                
+                repos.append(contentsOf: newRepos)
+                
+                self?.dataItems.send(repos)
+                
+            case .failure(let error):
+                if(!((error as NSError).domain == "NSURLErrorDomain")) {
+                    self?.view?.showError(title: "Error", message: error.localizedDescription)
+                }
+            }
+        })
     }
 
     func onNetworkReachale() {

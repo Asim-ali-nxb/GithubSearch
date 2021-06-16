@@ -104,7 +104,7 @@ extension RepositoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if(indexPath.row > 0 &&
             indexPath.row == viewModel.dataItems.value.count - 1) {
-            viewModel.loadMore()
+            viewModel.searchMore()
         }
     }
     

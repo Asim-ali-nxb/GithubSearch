@@ -29,8 +29,7 @@ final class iOSViewControllerFactory: ViewControllerFactory {
         let networkService = GithubSearchNetworkService(session: session, baseURL: baseURL, parser: parser, networkNotifier: getNetworkNotifier())
        
         let dataItems = CurrentValueSubject<[RepositoryListPresenter], Never>([])
-        let searchService = RepositoryListSearchConcrete(dataItems: dataItems, dataSource: networkService)
-        let viewModel = RepositoryListConcreteViewModel(dataItems: dataItems, dataSource: networkService, searchViewModel: searchService, networkNotifier: getNetworkNotifier())
+        let viewModel = RepositoryListConcreteViewModel(dataItems: dataItems, dataSource: networkService, networkNotifier: getNetworkNotifier())
         
         let controller = RepositoryListViewController(viewModel: viewModel, selection: selectionCallback)
         viewModel.view = controller
