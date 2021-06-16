@@ -13,6 +13,7 @@ protocol RepositoryListViewModel {
     var view: View? {get set}
     var searchText: CurrentValueSubject <String, Never>{get set}
     var searchPlaceholder: String {get}
+    func loadMore()
 }
 
 final class RepositoryListConcreteViewModel: RepositoryListViewModel {
@@ -68,6 +69,10 @@ final class RepositoryListConcreteViewModel: RepositoryListViewModel {
     
     private init() {
         fatalError("Can't be initialized without required parameters")
+    }
+    
+    func loadMore() {
+        searchViewModel.searchMore()
     }
 
     func onNetworkReachale() {

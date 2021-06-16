@@ -7,7 +7,7 @@
 
 import Foundation
 struct RepositoryListPresenter: Hashable {
-    let id: Int
+    let id = UUID()
     let name: String
     let fullName: String
     let repositoryURL: String

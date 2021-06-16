@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RepositoryListViewController: UIViewController {
+final class RepositoryListViewController: UIViewController {
     
     // MARK: - Vars
     private let selection: ItemSelection
@@ -101,6 +101,13 @@ class RepositoryListViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension RepositoryListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.row > 0 &&
+            indexPath.row == viewModel.dataItems.value.count - 1) {
+            viewModel.loadMore()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let url = URL(string: viewModel.dataItems.value[indexPath.row].repositoryURL) {
             selection(url, viewModel.dataItems.value[indexPath.row].name)

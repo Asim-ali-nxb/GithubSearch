@@ -10,7 +10,7 @@ import UIKit
 import Combine
 import WebKit
 
-class RepositoryWebViewController: UIViewController {
+final class RepositoryWebViewController: UIViewController {
     
     // MARK: - Vars
     private var viewModel: RepositoryWebViewModel

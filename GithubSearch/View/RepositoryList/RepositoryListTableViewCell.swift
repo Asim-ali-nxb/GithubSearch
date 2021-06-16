@@ -24,6 +24,7 @@ final class RepositoryListTableViewCell: UITableViewCell {
         view.addArrangedSubview(labelTitle)
         return view
     }()
+    
     private lazy var labelTitle: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0

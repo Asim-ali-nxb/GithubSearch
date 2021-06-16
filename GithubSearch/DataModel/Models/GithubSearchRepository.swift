@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol GithubSearchRepository {
-    func searchRepos(query: String, response: @escaping ((Result<[RepositoryModel], Error>) -> Void)) -> Cancellable?
+protocol GithubSearchRepository {
+    func searchRepos(query: String, page: Int, pageSize: Int, response: @escaping ((Result<RepositoryResult, Error>) -> Void)) -> Cancellable?
 }

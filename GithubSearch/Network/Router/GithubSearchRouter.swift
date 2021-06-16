@@ -8,7 +8,7 @@
 import Foundation
 
 enum GithubSearchRouter {
-    case searchRepositories(query: String)
+    case searchRepositories(query: String, page: Int, pageSize: Int)
 }
 
 extension GithubSearchRouter: Router {
@@ -23,8 +23,10 @@ extension GithubSearchRouter: Router {
     }
     private var parameters: [URLQueryItem]? {
         switch self {
-        case .searchRepositories(let query):
-            return [URLQueryItem(name: "q", value: query)]
+        case .searchRepositories(let query, let page, let pageSize):
+            return [URLQueryItem(name: "q", value: query),
+                    URLQueryItem(name: "page", value: String(page)),
+                    URLQueryItem(name: "per_page", value: String(pageSize))]
         }
     }
 }

@@ -7,16 +7,24 @@
 
 import Foundation
 
-public struct RepositoryModel {
-    public let id: Int
-    public let name: String
-    public let fullName: String
-    public let url: String
+struct RepositoryModel {
+    let name: String
+    let fullName: String
+    let url: String
     
-    public init(id: Int, name: String, fullName: String, url: String) {
-        self.id = id
+    init(name: String, fullName: String, url: String) {
         self.name = name
         self.fullName = fullName
         self.url = url
+    }
+}
+
+struct RepositoryResult {
+    let totalCount: Int
+    let items: [RepositoryModel]
+    
+    init(totalCount: Int, items: [RepositoryModel]) {
+        self.totalCount = totalCount
+        self.items = items
     }
 }
